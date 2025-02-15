@@ -1,4 +1,4 @@
-# Mock Ground Control System
+# Ground Control System
 
 ## Instructions to Operate  
 
