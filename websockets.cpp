@@ -1,3 +1,5 @@
+// Julian Bonnells
+
 #include <boost/beast/core.hpp>
 #include <boost/beast/websocket.hpp>
 #include <boost/asio/ip/tcp.hpp>
@@ -33,7 +35,6 @@ public:
 
     void start()
     {
-        std::cout << "start" << std::endl;
         ws_.async_accept(
             boost::asio::bind_executor(strand_,
                                        std::bind(&WebSocketSession::on_accept, shared_from_this(), std::placeholders::_1)));
@@ -42,7 +43,6 @@ public:
 private:
     void on_accept(boost::system::error_code ec)
     {
-        std::cout << "on_accept" << std::endl;
         if (ec)
             return fail(ec, "accept");
         send_telemetry();
@@ -50,7 +50,6 @@ private:
 
     void send_telemetry()
     {
-        std::cout << "send_telemetry" << std::endl;
         json telemetryData = {
             {"altitude", 1000 + rand() % 1000},
             {"speed", 500 + rand() % 500},
@@ -65,7 +64,6 @@ private:
 
     void on_write(boost::system::error_code ec, std::size_t /*bytes_transferred*/)
     {
-        std::cout << "on_write" << std::endl;
         if (ec)
             return fail(ec, "write");
         std::this_thread::sleep_for(std::chrono::seconds(1));
