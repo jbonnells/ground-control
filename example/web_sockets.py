@@ -27,7 +27,7 @@ async def telemetry_server(websocket):
         print("Client disconnected")
 
 async def main():
-    async with websockets.serve(telemetry_server, "localhost", 4000):
+    async with websockets.serve(telemetry_server, "0.0.0.0", 4000):
         print("WebSocket server started on ws://localhost:4000")
         await asyncio.Future()  # run forever
 

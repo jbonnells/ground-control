@@ -6,7 +6,7 @@ function App() {
   const [telemetry, setTelemetry] = useState(null);
 
   useEffect(() => {
-    const socket = new WebSocket('ws://localhost:4000');
+    const socket = new WebSocket('ws://127.0.0.1:4000');
 
     socket.onopen = () => {
       console.log('WebSocket connection established');
