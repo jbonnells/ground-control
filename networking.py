@@ -5,7 +5,7 @@ import socket as _socket
 
 # The target machine IP and port
 ip = '127.0.0.1'
-port = 5005
+port = 4000
 
 socket = _socket.socket(_socket.AF_INET, # Internet family
                         _socket.SOCK_DGRAM) # UDP
