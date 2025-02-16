@@ -1,4 +1,10 @@
-# Julian Bonnells
+#!/usr/bin/env python3
+# -----------------------------------------------------------------------------
+# File: GCS.py
+# Author: Julian Bonnells
+# Description: Ground control software that will attempt to send a command and
+#              read a response.
+# -----------------------------------------------------------------------------
 
 import networking
 from rich.console import Console

@@ -1,4 +1,9 @@
-// Julian Bonnells
+// ----------------------------------------------------------------------------
+// File: web_sockets.cpp
+// Author: Julian Bonnells
+// Description: Asynchronously connects to a local websocket and sends random
+//              telemetry data to be monitored and displayed by a react app
+// ----------------------------------------------------------------------------
 
 #include <boost/beast/core.hpp>
 #include <boost/beast/websocket.hpp>

@@ -1,4 +1,10 @@
-# Julian Bonnells
+#!/usr/bin/env python3
+# -----------------------------------------------------------------------------
+# File: web_sockets.py
+# Author: Julian Bonnells
+# Description: Asynchronously connects to a local websocket and sends random
+#              telemetry data to be monitored and displayed by a react app
+# -----------------------------------------------------------------------------
 
 import asyncio
 import websockets
