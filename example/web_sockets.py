@@ -1,11 +1,13 @@
+# Julian Bonnells
+
 import asyncio
 import websockets
 import json
 import random
 
-async def telemetry_server(websocket, path):
+async def telemetry_server(websocket):
     print("Client connected")
-    
+
     try:
         while True:
             # Generate random telemetry data
@@ -25,9 +27,9 @@ async def telemetry_server(websocket, path):
         print("Client disconnected")
 
 async def main():
-    server = await websockets.serve(telemetry_server, "localhost", 4000)
-    print("WebSocket server started on ws://localhost:4000")
-    await server.wait_closed()
+    async with websockets.serve(telemetry_server, "localhost", 4000):
+        print("WebSocket server started on ws://localhost:4000")
+        await asyncio.Future()  # run forever
 
 if __name__ == "__main__":
     asyncio.run(main())
